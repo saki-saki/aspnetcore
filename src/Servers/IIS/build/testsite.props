@@ -68,7 +68,7 @@
 
   <Target Name="InjectRequestHandlerOnPublish"
           Condition=" '$(InProcessTestSite)' == 'true' AND '$(BuildIisNativeProjects)' == 'true' AND '$(TargetFrameworkIdentifier)' != '.NETFramework'"
-          AfterTargets="GeneratePublishDependencyFile"
+          AfterTargets="CopyResolvedFilesToPublishDirectory"
           DependsOnTargets="PrepareInjectionApp">
     <Exec Command="$(InjectDepsApp) &quot;$(PublishDepsFilePath)&quot; $(RuntimeIdentifier) " />
   </Target>
