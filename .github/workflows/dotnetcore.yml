@@ -1,0 +1,18 @@
+name: .NET Core
+
+on:
+  issues:
+    types: [opened, edited, milestoned]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: data
+        path: ./aspnetcore
